@@ -29,21 +29,21 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
             )}
 
             <aside
-                className={`fixed md:relative top-0 bottom-0 left-0 z-50 bg-white border-r border-gray-200 flex flex-col transition-all duration-300 ease-in-out
+                className={`fixed md:relative top-0 bottom-0 left-0 z-50 bg-[#101B1D] border-r border-[#122F35] flex flex-col transition-all duration-300 ease-in-out
           ${isCollapsed ? "w-[72px]" : "w-[260px]"}
           ${isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
         `}
             >
-                <div className={`h-16 flex items-center px-5 border-b border-gray-200 ${isCollapsed ? "justify-center" : "justify-between"}`}>
+                <div className={`h-16 flex items-center px-5 border-b border-[#122F35] ${isCollapsed ? "justify-center" : "justify-between"}`}>
                     {!isCollapsed && (
-                        <div className="font-semibold text-lg flex items-center gap-2">
+                        <div className="font-semibold text-lg flex items-center gap-2 text-white">
                             <i className="fa-solid fa-layer-group"></i> <span>DocuAI</span>
                         </div>
                     )}
-                    <button onClick={toggleSidebar} className="hidden md:flex w-9 h-9 items-center justify-center text-gray-500 hover:bg-neutral-100 hover:text-black rounded-md transition-colors">
+                    <button onClick={toggleSidebar} className="hidden md:flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
                         <i className="fa-solid fa-bars"></i>
                     </button>
-                    <button onClick={toggleMobile} className="md:hidden flex w-9 h-9 items-center justify-center text-gray-500 hover:bg-neutral-100 hover:text-black rounded-md transition-colors">
+                    <button onClick={toggleMobile} className="md:hidden flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
                         <i className="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -55,8 +55,8 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
                             href={item.path}
                             onClick={() => isMobileOpen && toggleMobile()}
                             className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium transition-colors ${pathname === item.path
-                                    ? "bg-neutral-100 text-black"
-                                    : "text-gray-500 hover:bg-neutral-100 hover:text-black"
+                                    ? "bg-[#122F35] text-[#0DBBC4]"
+                                    : "text-white hover:bg-[#122F35] hover:text-[#0DBBC4]"
                                 } ${isCollapsed ? "justify-center px-0" : ""}`}
                         >
                             <i className={`fa-solid ${item.icon} text-lg w-5 text-center`}></i>
@@ -66,11 +66,11 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
 
                     <div className="flex-1"></div>
 
-                    <button className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-neutral-100 hover:text-black transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
+                    <button className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
                         <i className="fa-solid fa-gear text-lg w-5 text-center"></i>
                         {!isCollapsed && <span>Settings</span>}
                     </button>
-                    <Link href="/" className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-neutral-100 hover:text-black transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
+                    <Link href="/" className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
                         <i className="fa-solid fa-arrow-right-from-bracket text-lg w-5 text-center"></i>
                         {!isCollapsed && <span>Logout</span>}
                     </Link>

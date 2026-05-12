@@ -2,7 +2,7 @@
 
 export default function Chat() {
     return (
-        <div className="flex flex-col h-full w-full max-w-4xl mx-auto relative">
+        <div className="flex flex-col h-full w-full max-w-4xl mx-auto relative text-black">
 
             {/* Thread */}
             <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
@@ -51,7 +51,7 @@ export default function Chat() {
                         <i className="fa-solid fa-arrow-up"></i>
                     </button>
                 </div>
-                <div className="text-center text-xs text-gray-400 mt-3">
+                <div className="text-center text-xs text-black mt-3">
                     AI can make mistakes. Consider verifying important information.
                 </div>
             </div>

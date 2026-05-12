@@ -17,14 +17,14 @@ export default function Documents() {
         <div className="p-8 max-w-7xl mx-auto">
             <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                    <h2 className="text-2xl font-medium">My Documents</h2>
+                    <h2 className="text-2xl font-medium text-black">My Documents</h2>
 
                     <div className="flex items-center gap-3 flex-wrap">
                         <div className="flex gap-1 bg-neutral-50 p-1 rounded-md border border-gray-200">
-                            <button onClick={() => setViewMode("grid")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "grid" ? "bg-white text-black shadow-sm border border-gray-200" : "text-gray-500 hover:text-black"}`}>
+                            <button type="button" onClick={() => setViewMode("grid")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "grid" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
                                 <i className="fa-solid fa-border-all"></i>
                             </button>
-                            <button onClick={() => setViewMode("list")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "list" ? "bg-white text-black shadow-sm border border-gray-200" : "text-gray-500 hover:text-black"}`}>
+                            <button type="button" onClick={() => setViewMode("list")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "list" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
                                 <i className="fa-solid fa-list"></i>
                             </button>
                         </div>
@@ -34,7 +34,7 @@ export default function Documents() {
                             <input type="text" placeholder="Search my documents..." className="bg-transparent border-none outline-none text-sm w-full" />
                         </div>
 
-                        <button onClick={() => setShowModal(true)} className="flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-200 rounded-md text-sm font-medium hover:bg-neutral-50 hover:border-black transition-colors flex-1 md:flex-none justify-center">
+                        <button type="button" onClick={() => setShowModal(true)} className="flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-200 rounded-md text-sm font-medium text-black hover:bg-neutral-50 hover:border-black transition-colors flex-1 md:flex-none justify-center">
                             <i className="fa-solid fa-filter"></i> Filter
                         </button>
                         <button className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-neutral-800 transition-colors flex-1 md:flex-none justify-center">
