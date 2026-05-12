@@ -21,11 +21,11 @@ export default function Documents() {
 
                     <div className="flex items-center gap-3 flex-wrap">
                         <div className="flex gap-1 bg-neutral-50 p-1 rounded-md border border-gray-200">
-                            <button type="button" onClick={() => setViewMode("grid")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "grid" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
-                                <i className="fa-solid fa-border-all"></i>
+                            <button aria-label="Grid view" type="button" onClick={() => setViewMode("grid")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "grid" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
+                                <i className="fa-solid fa-border-all" aria-hidden="true"></i>
                             </button>
-                            <button type="button" onClick={() => setViewMode("list")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "list" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
-                                <i className="fa-solid fa-list"></i>
+                            <button aria-label="List view" type="button" onClick={() => setViewMode("list")} className={`w-8 h-8 rounded-md flex items-center justify-center transition-all ${viewMode === "list" ? "bg-white text-black shadow-sm border border-gray-200" : "text-black hover:text-black"}`}>
+                                <i className="fa-solid fa-list" aria-hidden="true"></i>
                             </button>
                         </div>
 
@@ -51,8 +51,8 @@ export default function Documents() {
                                 <span className="text-sm font-medium text-black block truncate w-full">{doc.name}</span>
                                 <span className="text-xs text-gray-400 block">{doc.meta}</span>
                             </div>
-                            <button className={`absolute right-2 top-2 w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 hover:bg-red-50 hover:border-red-200 rounded-md transition-all ${viewMode === "list" ? "relative top-0 right-0 border border-transparent opacity-100" : ""}`}>
-                                <i className="fa-solid fa-trash text-sm"></i>
+                            <button aria-label="Delete document" className={`absolute right-2 top-2 w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 hover:bg-red-50 hover:border-red-200 rounded-md transition-all ${viewMode === "list" ? "relative top-0 right-0 border border-transparent opacity-100" : ""}`}>
+                                <i className="fa-solid fa-trash text-sm" aria-hidden="true"></i>
                             </button>
                         </div>
                     ))}
@@ -65,14 +65,14 @@ export default function Documents() {
                     <div className="bg-white rounded-xl w-full max-w-md shadow-lg animate-in fade-in zoom-in-95 duration-200">
                         <div className="flex justify-between items-center p-5 border-b border-gray-200">
                             <h2 className="text-lg font-medium">Filter Documents</h2>
-                            <button onClick={() => setShowModal(false)} className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-neutral-100 rounded-md">
-                                <i className="fa-solid fa-xmark"></i>
+                            <button aria-label="Close filters" onClick={() => setShowModal(false)} className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-neutral-100 rounded-md">
+                                <i className="fa-solid fa-xmark" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div className="p-6 flex flex-col gap-5">
                             <div>
-                                <label className="block text-sm font-medium mb-2">File Type</label>
-                                <select className="w-full p-2.5 border border-gray-200 rounded-md text-sm focus:outline-none focus:border-black bg-white">
+                                <label htmlFor="file-type" className="block text-sm font-medium mb-2">File Type</label>
+                                <select id="file-type" aria-label="File Type" className="w-full p-2.5 border border-gray-200 rounded-md text-sm focus:outline-none focus:border-black bg-white">
                                     <option>All Types</option>
                                     <option>PDF (.pdf)</option>
                                     <option>Word (.docx)</option>
