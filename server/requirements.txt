@@ -1,6 +1,6 @@
 # Web Framework
-fastapi[standard]==0.136.1
-uvicorn
+fastapi==0.136.1
+uvicorn[standard]
 
 # AI & Reasoning (Gemini 2.5 / 3.1)
 google-genai>=1.55.0
