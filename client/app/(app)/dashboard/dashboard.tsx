@@ -81,7 +81,7 @@ export default function Dashboard() {
                             ].map((doc, i) => (
                                 <Link key={i} href="/chat" className="p-5 border border-gray-200 rounded-xl bg-white flex flex-col gap-2 hover:border-black hover:shadow-sm hover:bg-neutral-50 transition-all cursor-pointer relative group">
                                     <i className={`fa-solid ${doc.icon} text-3xl text-gray-500 mb-1`}></i>
-                                    <span className="text-sm font-medium text-black truncate w-full">{doc.name}</span>
+                                    <span className="text-sm font-medium text-black truncate w-full mb-1">{doc.name}</span>
                                     <span className="text-xs text-gray-400">{doc.meta}</span>
                                 </Link>
                             ))}
