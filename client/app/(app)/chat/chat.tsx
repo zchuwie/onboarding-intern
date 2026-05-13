@@ -33,22 +33,26 @@ export default function Chat() {
             <div className="p-4 sm:px-8 sm:pb-8 bg-neutral-50">
                 <div className="flex gap-2 mb-3 flex-wrap">
                     <div className="bg-white border border-gray-200 px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-2 text-black">
-                        <i className="fa-solid fa-file-word text-gray-500"></i> Project_Requirements_v2.docx
-                        <i className="fa-solid fa-xmark text-gray-400 hover:text-black cursor-pointer"></i>
+                        <i className="fa-solid fa-file-word text-gray-500" aria-hidden="true"></i>
+                        <span>Project_Requirements_v2.docx</span>
+                        <button aria-label="Remove file" onClick={() => {}} className="ml-2 text-gray-400 hover:text-black">
+                            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-xl flex items-end p-2 shadow-sm focus-within:border-black transition-colors">
-                    <button className="w-9 h-9 flex items-center justify-center text-gray-500 hover:bg-neutral-100 rounded-md transition-colors shrink-0">
-                        <i className="fa-solid fa-paperclip"></i>
+                    <button aria-label="Attach file" className="w-9 h-9 flex items-center justify-center text-gray-500 hover:bg-neutral-100 rounded-md transition-colors shrink-0">
+                        <i className="fa-solid fa-paperclip" aria-hidden="true"></i>
                     </button>
                     <textarea
                         placeholder="Ask a question about your documents..."
                         rows={1}
+                        aria-label="Message input"
                         className="flex-1 border-none resize-none p-2 text-sm outline-none bg-transparent max-h-36 min-h-9"
                     ></textarea>
-                    <button className="w-9 h-9 flex items-center justify-center bg-black text-white hover:bg-neutral-800 rounded-md transition-colors shrink-0">
-                        <i className="fa-solid fa-arrow-up"></i>
+                    <button aria-label="Send message" className="w-9 h-9 flex items-center justify-center bg-black text-white hover:bg-neutral-800 rounded-md transition-colors shrink-0">
+                        <i className="fa-solid fa-arrow-up" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div className="text-center text-xs text-black mt-3">

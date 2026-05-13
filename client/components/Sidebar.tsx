@@ -40,10 +40,10 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
                             <i className="fa-solid fa-layer-group"></i> <span>DocuAI</span>
                         </div>
                     )}
-                    <button onClick={toggleSidebar} className="hidden md:flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
+                    <button aria-label="Toggle sidebar" onClick={toggleSidebar} className="hidden md:flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
                         <i className="fa-solid fa-bars"></i>
                     </button>
-                    <button onClick={toggleMobile} className="md:hidden flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
+                    <button aria-label="Toggle mobile menu" onClick={toggleMobile} className="md:hidden flex w-9 h-9 items-center justify-center text-white hover:bg-[#122F35] hover:text-[#0DBBC4] rounded-md transition-colors">
                         <i className="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -53,6 +53,7 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
                         <Link
                             key={item.path}
                             href={item.path}
+                            aria-label={item.name}
                             onClick={() => isMobileOpen && toggleMobile()}
                             className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium transition-colors ${pathname === item.path
                                     ? "bg-[#122F35] text-[#0DBBC4]"
@@ -66,11 +67,11 @@ export default function Sidebar({ isCollapsed, toggleSidebar, isMobileOpen, togg
 
                     <div className="flex-1"></div>
 
-                    <button className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
+                    <button aria-label="Settings" className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
                         <i className="fa-solid fa-gear text-lg w-5 text-center"></i>
                         {!isCollapsed && <span>Settings</span>}
                     </button>
-                    <Link href="/" className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
+                    <Link aria-label="Logout" href="/" className={`flex items-center gap-4 px-4 py-3 rounded-md text-sm font-medium text-white hover:bg-[#122F35] hover:text-[#0DBBC4] transition-colors ${isCollapsed ? "justify-center px-0" : ""}`}>
                         <i className="fa-solid fa-arrow-right-from-bracket text-lg w-5 text-center"></i>
                         {!isCollapsed && <span>Logout</span>}
                     </Link>

@@ -28,7 +28,7 @@ export default function Dashboard() {
                     <i className="fa-solid fa-bolt text-2xl text-gray-500 mt-1"></i>
                     <div>
                         <h3 className="text-xs font-medium text-black uppercase tracking-wider">AI Responses</h3>
-                        <p className="text-2xl font-semibold text-black kmt-1">1,048</p>
+                        <p className="text-2xl font-semibold text-black mt-1">1,048</p>
                     </div>
                 </div>
             </div>
@@ -58,10 +58,12 @@ export default function Dashboard() {
                                 "Extract all action items from Project Requirements v2",
                                 "Identify negative sentiment in Q1-Q2 User Feedback"
                             ].map((prompt, i) => (
-                                <Link key={i} href="/chat" className="p-4 bg-neutral-50 border border-gray-200 rounded-md text-sm text-black flex items-center gap-3 hover:border-black hover:bg-white hover:shadow-sm transition-all cursor-pointer">
-                                    <i className="fa-solid fa-wand-magic-sparkles text-gray-400 text-lg"></i>
-                                    <span>{prompt}</span>
-                                </Link>
+                                <li key={i}>
+                                    <Link href="/chat" className="p-4 bg-neutral-50 border border-gray-200 rounded-md text-sm text-black flex items-center gap-3 hover:border-black hover:bg-white hover:shadow-sm transition-all cursor-pointer">
+                                        <i className="fa-solid fa-wand-magic-sparkles text-gray-400 text-lg" aria-hidden="true"></i>
+                                        <span>{prompt}</span>
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -79,7 +81,7 @@ export default function Dashboard() {
                             ].map((doc, i) => (
                                 <Link key={i} href="/chat" className="p-5 border border-gray-200 rounded-xl bg-white flex flex-col gap-2 hover:border-black hover:shadow-sm hover:bg-neutral-50 transition-all cursor-pointer relative group">
                                     <i className={`fa-solid ${doc.icon} text-3xl text-gray-500 mb-1`}></i>
-                                    <span className="text-sm font-medium text-black truncate w-full">{doc.name}</span>
+                                    <span className="text-sm font-medium text-black truncate w-full mb-1">{doc.name}</span>
                                     <span className="text-xs text-gray-400">{doc.meta}</span>
                                 </Link>
                             ))}
